@@ -18,8 +18,8 @@ RUN /etc/init.d/redis-server start
 # Install SWI Prolog:
 RUN git clone https://github.com/SWI-Prolog/swipl-devel.git
 RUN cd swipl-devel
-RUN ./prepare
-RUN ./build
+RUN yes "yes" | ./prepare
+RUN yes "yes" | ./build
 
 # Redis port
 EXPOSE 6379/tcp
