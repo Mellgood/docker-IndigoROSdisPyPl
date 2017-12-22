@@ -15,11 +15,8 @@ RUN apt-get install -y libc6-i386 && apt-get install -y lib32ncurses5 && apt-get
 RUN apt-get -y install python python3-pip redis-server python-redis git build-essential libevent-dev
 RUN /etc/init.d/redis-server start
 
-# Install SWI Prolog:
-RUN git clone https://github.com/SWI-Prolog/swipl-devel.git
-RUN cd swipl-devel
-RUN yes "yes" | ./prepare
-RUN yes "yes" | ./build
+# Install SWI Prolog and its dependencies
+# TODO
 
 # Redis port
 EXPOSE 6379/tcp
