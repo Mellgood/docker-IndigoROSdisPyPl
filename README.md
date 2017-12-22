@@ -13,11 +13,14 @@ A docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Pr
     agnsal/docker-IndigoROSdisPyPl
     rqt
     export containerId=$(docker ps -l -q)
+ -  **To work with the container:** \
+    docker exec -it IndigoROSdisPyPl bash
  -  **To open Gazebo Gzweb GUI:** \
     gazebo
- -  **To stop the container:** \
-    docker stop agnsal/docker-IndigoROSdisPyPl
+ -  **To exit and stop the container:** \
+    exit \
+    docker stop IndigoROSdisPyPl
  -  **After using the container:** \
     xhost -local:root
  -  **Tu run the container again:** \
-    docker start <containerId>
+    docker start IndigoROSdisPyPl
