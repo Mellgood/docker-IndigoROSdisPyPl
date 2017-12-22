@@ -1,4 +1,4 @@
-# docker-ROS_Indigo_Gzweb
+# docker-IndigoROSdisPyPl
 A docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Prolog (it is compatible with SICStus Prolog and contains all its dependencies, so you can buy and install it too inside this container).
 
 ## Instructions:
