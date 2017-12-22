@@ -19,7 +19,7 @@ RUN /etc/init.d/redis-server start
 RUN apt-get install software-properties-common
 RUN add-apt-repository ppa:swi-prolog/stable
 RUN apt-get update
-RUN apt-get install swi-prolog
+RUN apt-get -y install swi-prolog
 
 # Redis port
 EXPOSE 6379/tcp
