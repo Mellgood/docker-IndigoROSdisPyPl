@@ -36,7 +36,7 @@ ROS ad the catkin workspace are still configured and you just can use all the en
     &nbsp; **5.5 In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to find the customly created packages):** \
          source catkin_ws/devel/setup.bash
  6.  **To open Gazebo GUI:** \
-    gazebo **or** roslaunch gazebo <file.launch> **or** rosrun gazebo_ros <executable>
+    gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
  7. **To exit the container:** \
     exit
  8.  **(IMPORTANT) To save the container state, not to lose your work on it:** \
