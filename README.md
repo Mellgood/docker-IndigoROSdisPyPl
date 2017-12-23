@@ -1,5 +1,5 @@
 # docker-IndigoROSdisPyPl
-A docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Prolog (it is compatible with SICStus Prolog and contains all its dependencies, so you can buy and install it too inside this container).
+A Docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Prolog (it is compatible with SICStus Prolog and contains all its dependencies, so you can buy and install it too inside this container).
 
 ## Instructions:
 -  docker pull agnesesalutari/docker-indigorosdispypl
@@ -23,4 +23,4 @@ A docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Pr
  -  **After using the container:** \
     xhost -local:root
  -  **Tu run the container again:** \
-    docker start IndigoROSdisPyPl
+    docker start "IndigoROSdisPyPl"
