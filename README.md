@@ -1,39 +1,39 @@
 # docker-IndigoROSdisPyPl
 A Docker container with Ubuntu 14, ROS Indigo, Gazebo, Python 3 and SWI-Prolog (it is compatible with SICStus Prolog and contains all its dependencies, so you can buy and install it too inside this container). \
-ROS ad the catkin workspace are still configured and you just have to run use all the environment only, so you don't need to configure anything, 
+ROS ad the catkin workspace are still configured and you just can use all the environment without the need to configure anything, but if you have to change something in the configuration please see the point 5. of the instructions below.
 
 ## Instructions:
 1.  **To get the Docker container:** \
-        docker pull agnesesalutari/docker-indigorosdispypl
+        &nbsp; docker pull agnesesalutari/docker-indigorosdispypl
 2.  **To allow visualization:** \
-        xhost +local:root
+        &nbsp; xhost +local:root
 3.  **To run the container (you have tu use this command for the very first time you run the container only):** \
-        docker run -it \\ \
-        --name="IndigoROSdisPyPl" \\ \
-        --env="DISPLAY" \\ \
-        --env="QT_X11_NO_MITSHM=1" \\ \
-        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
-        agnesesalutari/docker-indigorosdispypl \\ \
-        rqt \
-        export containerId=$(docker ps -l -q)
+        &nbsp; docker run -it \\ \
+        &nbsp; --name="IndigoROSdisPyPl" \\ \
+        &nbsp; --env="DISPLAY" \\ \
+        &nbsp; --env="QT_X11_NO_MITSHM=1" \\ \
+        &nbsp; --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
+        &nbsp; agnesesalutari/docker-indigorosdispypl \\ \
+        &nbsp; rqt \
+        &nbsp; export containerId=$(docker ps -l -q)
  4.  **To work inside the container:** \
-        docker exec -it "IndigoROSdisPyPl" bash
- 5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:**
-    - **Enable bash to provide all ROS related commands:** 
-        source /opt/ros/indigo/setup.bash
-    - **In order to work in an network environment:**\
-        export ROS_MASTER_URI="http://127.0.0.1:11311" \
-        export ROS_HOSTNAME="127.0.0.1" \
-        export ROS_IP="127.0.0.1"
-    - **Create catkin workspace:** \
-         mkdir -p ~/catkin_ws/src \
-          cd ~/catkin_ws/src \
-          catkin_init_workspace
-    - **Test:** \ 
-        cd ~/catkin_ws/ \
-        catkin_make \
-        source devel/setup.bash
-    - **In order to reference the newly created local workspace in our bashrc (to make tools, like roslaunch and rosrun, able to       find the customly created packages):** \
+        &nbsp; docker exec -it "IndigoROSdisPyPl" bash
+ 5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:** \
+    &nbsp; 5.1. **Enable bash to provide all ROS related commands:** 
+        &nbsp; source /opt/ros/indigo/setup.bash \
+    &nbsp; 5.2. **In order to work in an network environment:**\
+        &nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
+        &nbsp; export ROS_HOSTNAME="127.0.0.1" \
+        &nbsp; export ROS_IP="127.0.0.1" \
+    &nbsp; 5.3. **Create catkin workspace:** \
+        &nbsp; mkdir -p ~/catkin_ws/src \
+        &nbsp; cd ~/catkin_ws/src \
+        &nbsp; catkin_init_workspace \
+    &nbsp; 5.4. **Test:** \ 
+        &nbsp; cd ~/catkin_ws/ \
+        &nbsp; catkin_make \
+        &nbsp; source devel/setup.bash \
+    &nbsp; 5.5 **In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to find the customly created packages):** \
          source catkin_ws/devel/setup.bash
  6.  **To open Gazebo GUI:** \
     gazebo
