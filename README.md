@@ -25,25 +25,26 @@ ROS ad the catkin workspace are still configured and you just can use all the en
         &nbsp;&nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
         &nbsp;&nbsp; export ROS_HOSTNAME="127.0.0.1" \
         &nbsp;&nbsp; export ROS_IP="127.0.0.1" \
-    &nbsp; **5.3. Create catkin workspace:** \
-        &nbsp;&nbsp; mkdir -p ~/catkin_ws/src \
-        &nbsp;&nbsp; cd ~/catkin_ws/src \
-        &nbsp;&nbsp; catkin_init_workspace \
-    &nbsp; **5.4. Test:** \
-        &nbsp;&nbsp; cd ~/catkin_ws/ \
-        &nbsp;&nbsp; catkin_make \
-        &nbsp;&nbsp; source devel/setup.bash \
-    &nbsp; **5.5 In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to find the customly created packages):** \
-         source catkin_ws/devel/setup.bash
- 6.  **To open Gazebo GUI:** \
+ 6. **Create catkin workspace:** \
+        &nbsp; mkdir -p ~/catkin_ws/src \
+        &nbsp; cd ~/catkin_ws/src \
+        &nbsp; catkin_init_workspace \
+ 7. **Test:** \
+        &nbsp; cd ~/catkin_ws/ \
+        &nbsp; catkin_make \
+        &nbsp; source devel/setup.bash \
+ 8. **In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to  
+     find the customly created packages):** \
+        &nbsp; source catkin_ws/devel/setup.bash
+ 9.  **To open Gazebo GUI:** \
     &nbsp; gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
- 7. **To exit the container:** \
+ 10. **To exit the container:** \
     &nbsp; exit
- 8.  **(IMPORTANT) To save the container state, not to lose your work on it:** \
+ 11.  **(IMPORTANT) To save the container state, not to lose your work on it:** \
     &nbsp; docker commit "IndigoROSdisPyPl"
- 9.  **To stop the container:** \
+ 12.  **To stop the container:** \
     &nbsp; docker stop "IndigoROSdisPyPl"
- 10.  **After using the container:** \
+ 13.  **After using the container:** \
     &nbsp; xhost -local:root
- 11.  **Tu run the container again:** \
+ 14.  **Tu run the container again:** \
     &nbsp; docker start "IndigoROSdisPyPl"
