@@ -11,7 +11,8 @@ A Docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Pr
     --env="QT_X11_NO_MITSHM=1" \\ \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
     agnesesalutari/docker-indigorosdispypl \\ \
-    rqt export containerId=$(docker ps -l -q)
+    rqt \
+    export containerId=$(docker ps -l -q)
  -  **To work with the container:** \
     docker exec -it "IndigoROSdisPyPl" bash
  -  **To open Gazebo Gzweb GUI:** \
