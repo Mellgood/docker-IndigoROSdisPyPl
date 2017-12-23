@@ -19,7 +19,7 @@ ROS ad the catkin workspace are still configured and you just can use all the en
  4.  **To work inside the container:** \
         &nbsp; docker exec -it "IndigoROSdisPyPl" bash
  5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:** \
-    &nbsp; 5.1. **Enable bash to provide all ROS related commands:** 
+    &nbsp; 5.1. **Enable bash to provide all ROS related commands:** \
         &nbsp; source /opt/ros/indigo/setup.bash \
     &nbsp; 5.2. **In order to work in an network environment:**\
         &nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
@@ -29,7 +29,7 @@ ROS ad the catkin workspace are still configured and you just can use all the en
         &nbsp; mkdir -p ~/catkin_ws/src \
         &nbsp; cd ~/catkin_ws/src \
         &nbsp; catkin_init_workspace \
-    &nbsp; 5.4. **Test:** \ 
+    &nbsp; 5.4. **Test:** \
         &nbsp; cd ~/catkin_ws/ \
         &nbsp; catkin_make \
         &nbsp; source devel/setup.bash \
