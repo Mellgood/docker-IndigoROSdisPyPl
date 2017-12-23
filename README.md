@@ -5,12 +5,12 @@ A Docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Pr
 -  docker pull agnesesalutari/docker-indigorosdispypl
 -  xhost +local:root
 -  **To run the container (you have tu use this command for the very first time you run the container only):** \
-    docker run -it \
-    --name="IndigoROSdisPyPl" \
-    --env="DISPLAY" \
-    --env="QT_X11_NO_MITSHM=1" \
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    agnsal/docker-IndigoROSdisPyPl \
+    docker run -it \\ \
+    --name="IndigoROSdisPyPl" \\ \
+    --env="DISPLAY" \\ \
+    --env="QT_X11_NO_MITSHM=1" \\ \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
+    agnsal/docker-IndigoROSdisPyPl \\ \
     rqt
     export containerId=$(docker ps -l -q)
  -  **To work with the container:** \
