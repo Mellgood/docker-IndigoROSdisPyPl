@@ -36,14 +36,14 @@ ROS ad the catkin workspace are still configured and you just can use all the en
     &nbsp; **5.5 In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to find the customly created packages):** \
          source catkin_ws/devel/setup.bash
  6.  **To open Gazebo GUI:** \
-    gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
+    &nbsp; gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
  7. **To exit the container:** \
-    exit
+    &nbsp; exit
  8.  **(IMPORTANT) To save the container state, not to lose your work on it:** \
-    docker commit "IndigoROSdisPyPl"
+    &nbsp; docker commit "IndigoROSdisPyPl"
  9.  **To stop the container:** \
-    docker stop "IndigoROSdisPyPl"
+    &nbsp; docker stop "IndigoROSdisPyPl"
  10.  **After using the container:** \
-    xhost -local:root
+    &nbsp; xhost -local:root
  11.  **Tu run the container again:** \
-    docker start "IndigoROSdisPyPl"
+    &nbsp; docker start "IndigoROSdisPyPl"
