@@ -14,7 +14,7 @@ A Docker container with Ubuntu 14, ROS Indigo, Gazebo Gzweb, Python 3 and SWI-Pr
     rqt
     export containerId=$(docker ps -l -q)
  -  **To work with the container:** \
-    docker exec -it IndigoROSdisPyPl bash
+    docker exec -it "IndigoROSdisPyPl" bash
  -  **To open Gazebo Gzweb GUI:** \
     gazebo
  -  **To exit and stop the container:** \
