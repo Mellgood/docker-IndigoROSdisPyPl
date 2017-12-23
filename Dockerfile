@@ -16,7 +16,10 @@ RUN apt-get -y install python python3-pip redis-server python-redis git build-es
 RUN /etc/init.d/redis-server start
 
 # Install SWI Prolog and its dependencies
-# TODO
+RUN apt-get update
+RUN apt-get -y install software-properties-common
+RUN yes "yes" | sudo apt-add-repository ppa:swi-prolog/stable
+RUN apt-get -y install swi-prolog
 
 # Redis port
 EXPOSE 6379/tcp
