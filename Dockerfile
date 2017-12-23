@@ -21,5 +21,12 @@ RUN apt-get -y install software-properties-common
 RUN yes "yes" | sudo apt-add-repository ppa:swi-prolog/stable
 RUN apt-get -y install swi-prolog
 
+# ROS configuration:
+RUN source /opt/ros/indigo/setup.bash
+RUN export ROS_MASTER_URI="http://127.0.0.1:11311" && export ROS_HOSTNAME="127.0.0.1" && export ROS_IP="127.0.0.1"
+RUN mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src && catkin_init_workspace
+RUN cd ~/catkin_ws/ && catkin_make && source devel/setup.bash
+RUN source catkin_ws/devel/setup.bash
+
 # Redis port
 EXPOSE 6379/tcp
