@@ -1,6 +1,6 @@
 # docker-IndigoROSdisPyPl
 A Docker container with Ubuntu 14, ROS Indigo, Gazebo, Redis, Python 3 and SWI-Prolog (it is compatible with SICStus Prolog and contains all its dependencies, so you can buy and install it too inside this container). \
-ROS ad the catkin workspace are still configured and you just can use all the environment without the need to configure anything, but if you have to change something in the configuration please see the point 5. of the instructions below.
+ROS ad the catkin workspace are still configured and you just can use all the environment without the need to configure them, but if you have to change something in the configuration please see the point 5. of the instructions below.
 
 ## Instructions:
 1.  **To get the Docker container:** \
@@ -19,20 +19,20 @@ ROS ad the catkin workspace are still configured and you just can use all the en
  4.  **To work inside the container:** \
         &nbsp; docker exec -it "IndigoROSdisPyPl" bash
  5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:** \
-    &nbsp; **5.1. Enable bash to provide all ROS related commands:** \
-        &nbsp;&nbsp; source /opt/ros/indigo/setup.bash \
-    &nbsp; **5.2. In order to work in an network environment:**\
-        &nbsp;&nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
-        &nbsp;&nbsp; export ROS_HOSTNAME="127.0.0.1" \
-        &nbsp;&nbsp; export ROS_IP="127.0.0.1" \
+        &nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
+        &nbsp; export ROS_HOSTNAME="127.0.0.1" \
+        &nbsp; export ROS_IP="127.0.0.1" \
+ 6. **To add ROS environment variables to the bash:** \
+        &nbsp; echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
+        &nbsp; source ~/.bashrc
  6. **Create catkin workspace:** \
         &nbsp; mkdir -p ~/catkin_ws/src \
         &nbsp; cd ~/catkin_ws/src \
-        &nbsp; catkin_init_workspace \
+        &nbsp; catkin_init_workspace
  7. **Test:** \
         &nbsp; cd ~/catkin_ws/ \
         &nbsp; catkin_make \
-        &nbsp; source devel/setup.bash \
+        &nbsp; source devel/setup.bash
  8. **In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to  
      find the customly created packages):** \
         &nbsp; source catkin_ws/devel/setup.bash
