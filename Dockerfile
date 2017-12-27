@@ -22,9 +22,6 @@ RUN yes "yes" | sudo apt-add-repository ppa:swi-prolog/stable
 RUN apt-get -y install swi-prolog
 
 # ROS configuration
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
-RUN /bin/bash "source ~/.bashrc"
 RUN export ROS_MASTER_URI="http://127.0.0.1:11311" && export ROS_HOSTNAME="127.0.0.1" && export ROS_IP="127.0.0.1"
 
 # Redis port
