@@ -21,7 +21,7 @@ ROS ad the catkin workspace are still configured and you just can use all the en
  5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:** \
         &nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
         &nbsp; export ROS_HOSTNAME="127.0.0.1" \
-        &nbsp; export ROS_IP="127.0.0.1" \
+        &nbsp; export ROS_IP="127.0.0.1"
  6. **To add ROS environment variables to the bash:** \
         &nbsp; echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
         &nbsp; source ~/.bashrc
