@@ -4,47 +4,77 @@ ROS ad the catkin workspace are still configured and you just can use all the en
 
 ## Instructions:
 1.  **To get the Docker container:** \
-        &nbsp; docker pull agnesesalutari/docker-indigorosdispypl
+```shell
+docker pull agnesesalutari/docker-indigorosdispypl
+```
 2.  **To allow visualization:** \
-        &nbsp; xhost +local:root
+```shell
+xhost +local:root
+```
 3.  **To run the container (you have tu use this command for the very first time you run the container only):** \
-        &nbsp; docker run -it \\ \
-        &nbsp; --name="IndigoROSdisPyPl" \\ \
-        &nbsp; --env="DISPLAY" \\ \
-        &nbsp; --env="QT_X11_NO_MITSHM=1" \\ \
-        &nbsp; --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
-        &nbsp; agnesesalutari/docker-indigorosdispypl \\ \
-        &nbsp; rqt \
-        &nbsp; export containerId=$(docker ps -l -q)
+```shell
+docker run -it \\ \
+--name="IndigoROSdisPyPl" \\ \
+--env="DISPLAY" \\ \
+--env="QT_X11_NO_MITSHM=1" \\ \
+--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \\ \
+agnesesalutari/docker-indigorosdispypl \\ \
+rqt \
+export containerId=$(docker ps -l -q)
+```
  4.  **To work inside the container:** \
-        &nbsp; docker exec -it "IndigoROSdisPyPl" bash
+ ```shell
+ docker exec -it "IndigoROSdisPyPl" bash
+ ```
  5.  **(OPTIONAL) To re-configure ROS use the following lines, changing the parameter values, if needed:** \
-        &nbsp; export ROS_MASTER_URI="http://127.0.0.1:11311" \
-        &nbsp; export ROS_HOSTNAME="127.0.0.1" \
-        &nbsp; export ROS_IP="127.0.0.1"
+ ```shell
+ export ROS_MASTER_URI="http://127.0.0.1:11311" \
+ export ROS_HOSTNAME="127.0.0.1" \
+ export ROS_IP="127.0.0.1"
+ ```
  6. **To add ROS environment variables to the bash:** \
-        &nbsp; echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
-        &nbsp; source ~/.bashrc
+ ```shell
+ echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc \
+ source ~/.bashrc
+ ```
  6. **Create catkin workspace:** \
-        &nbsp; mkdir -p ~/catkin_ws/src \
-        &nbsp; cd ~/catkin_ws/src \
-        &nbsp; catkin_init_workspace
+ ```shell
+mkdir -p ~/catkin_ws/src \
+cd ~/catkin_ws/src \
+catkin_init_workspace
+```
  7. **Test:** \
-        &nbsp; cd ~/catkin_ws/ \
-        &nbsp; catkin_make \
-        &nbsp; source devel/setup.bash
+ ```shell
+cd ~/catkin_ws/ \
+catkin_make \
+source devel/setup.bash
+```
  8. **In order to reference the newly created local workspace in your bashrc (to make tools, like roslaunch and rosrun, able to  
      find the customly created packages):** \
-        &nbsp; source catkin_ws/devel/setup.bash
+```shell
+source catkin_ws/devel/setup.bash
+```
  9.  **To open Gazebo GUI:** \
-    &nbsp; gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
+```shell
+gazebo **or** roslaunch gazebo YourFile.launch **or** rosrun gazebo_ros YourExecutable
+```
  10. **To exit the container:** \
-    &nbsp; exit
+ ```shell
+exit
+```
  11.  **(IMPORTANT) To save the container state, not to lose your work on it:** \
-    &nbsp; docker commit "IndigoROSdisPyPl"
+ ```shell
+docker commit "IndigoROSdisPyPl"
+```
  12.  **To stop the container:** \
-    &nbsp; docker stop "IndigoROSdisPyPl"
+ ```shell
+docker stop "IndigoROSdisPyPl"
+```
  13.  **After using the container:** \
-    &nbsp; xhost -local:root
+ ```shell
+xhost -local:root
+```
  14.  **Tu run the container again:** \
-    &nbsp; docker start "IndigoROSdisPyPl"
+ ```shell
+docker start "IndigoROSdisPyPl"
+```
